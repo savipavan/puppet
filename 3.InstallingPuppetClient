@@ -1,0 +1,30 @@
+Puppet created in 2005 by Luke Kanies
+First commercial release in 2011
+Support for Linux, Unix and Windows
+Open Source V4.5 Puppet Enterprise 2016-1
+Create Repos For Puppet-Labs : Most distributions still ship puppet 3 in their internal repositories. To be able to make use of the latest Puppet 4 code when we must first setup software repositories pointing to puppetlabs.
+Package Collection Repository CentOS : Puppet-Collections are new to puppet4 and ensure that all dependency packages such as heira, facter and ruby come from the same repository ensure most compatability with the client.
+#sudo rpm -Uvh \ https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+Package Collection Repository Ubuntu : The process for Ubuntu is similar. Here we use the code name of "trusty" for the 14.04 repository.
+#wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb
+#sudo dpkg -i puppetlabs-release-pc1-trusty.deb
+#sudo apt-get update
+
+Adding repositories
+--------------------
+We are going to add the repositories on both CentOS and Ubuntu Nodes
+Configuring The CentOS 7 Puppet Repository
+------------------------------------------
+#id - can see wheel group
+#ctrl + l clear the screen
+#sudo yum install -y http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+#yum repolist - list repository and can see Puppet Labs PC1 repository
+------------------------------------
+ConfiguringTheUbuntuPuppetRepository
+------------------------------------
+Ubuntu 14.04 LTS because Ubuntu 16.04 LTS and CentOS 7 are too similar as both use systemd hence we are using Ubuntu 14.04
+#wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb
+#ctrl+l
+#id
+#sudo dpkg -i puppetlabs-release-pc1-trusty.deb
+#sudo apt-get update
