@@ -28,3 +28,28 @@ Ubuntu 14.04 LTS because Ubuntu 16.04 LTS and CentOS 7 are too similar as both u
 #id
 #sudo dpkg -i puppetlabs-release-pc1-trusty.deb
 #sudo apt-get update
+-------------------------------
+Installing the Client : On both Ubuntu and CentOS systems we can now installl the All in One Client. To ensure that the package will not clash with the standard repositories the package name is puppet-agent
+---------------------
+#sudo yum install puppet-agent #CentOS
+#sudo apt-get install puppet-agent #Ubunut
+#ls -l /opt/puppetlabs/bin  
+-----------------------
+--------------------------------
+Understadning The File Locations:
+--------------------------------
+Binary Locations :
+A subset of executables are available in : /opt/puppetlabs/bin. This is added to the PATH variable.
+Other executables are in /opt/puppetlabs/puppet/bin. This is not in the PATH and makes it less likely these makes it less likely these programs will be used in error
+------------
+Main Configuration
+-------------
+The main configuration directory is : /etc/puppetlabs/puppet. The main configuration files is puppet.conf
+This makes Puppet Open Source now consitent with Puppet Enterprise
+----------------
+Display Data : We can use the puppet command to display configuration data
+#puppet agent --version
+#puppet config print
+#puppet config print confdir	
+#puppet config  print certname
+#puppet config print { confdir rundir ssldir runinterval }
